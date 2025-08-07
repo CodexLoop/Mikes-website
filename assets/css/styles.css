@@ -1,0 +1,263 @@
+/*Css Variables*/
+
+:root {
+    /*Colors*/
+
+    --pure-white: #fff; 
+    --flash-white: #F5F5F7;
+    --wisteria: #BFA2DB;
+    --sunset: #E4C590;
+    --eerie-black: #1C1C1E;
+    --dark-red: #260001;
+    --grape: #6A0DAD;
+
+    /*Typography*/
+
+    --hero-text: 64px;
+    --h1-text: 48px;
+    --h2-text: 36px;
+    --h3-text: 28px;
+    --subheading: 21px;
+    --body-text: 16px;
+    --small-text: 12px;
+
+    /*Weights*/
+
+    --regular: 400;
+    --semi-bold: 600;
+    --bold: 700;
+    --black-bold: 900;
+}
+
+@media only screen and (max-width: 768px) {
+    :root {
+        /*Typography*/
+
+        --hero-text: 40px;
+        --h1-text: 32px;
+        --h2-text: 26px;
+        --h3-text: 22px;
+        --subheading: 18px;
+        --body-text: 15px;
+        --small-text: 11px;
+    }
+}
+
+
+/*General*/
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: var(--regular);
+    font-style: normal;
+    font-size: var(--body-copy);
+    color: var(--eerie-black);
+    background-color: var(--pure-white);
+    position: relative;
+}
+
+
+/* Reusable Classes */
+
+h1, h2, h3, h4 {
+    font-family: "Unbounded", sans-serif;
+    letter-spacing: .05ch;
+}
+
+p {
+    font-size: var(--body-copy);
+}
+
+a {
+    text-decoration: none;
+    color: var(--pure-white);
+    transition: .5s all ease;
+}
+
+a:hover {
+    color: var(--wisteria);
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+svg {
+    width: 16px;
+    height: 16px;
+}
+
+.section {
+    position: relative;
+    padding-block: 120px;
+    overflow: hidden;
+}
+
+.container {
+    width: 80%;
+    max-width: 1440px;
+    margin-inline: auto;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.active {
+    color: var(--wisteria);
+    font-weight: var(--bold) !important;
+}
+
+/* Buttons */
+
+.button_light,
+.button_outlined {
+    display: grid;
+    place-items: center;
+    color: var(--eerie-black);
+    background-color: var(--sunset);
+    padding: 15px 25px;
+    margin-block: 1.5rem;
+    border-radius: 7px;
+    font-size: var(--small-text);
+    font-weight: var(--bold) !important;
+    transition: .5s all ease;
+    cursor: pointer;
+}
+
+.button_light:hover {
+    color: #292929;
+    background-color: #eed9b6;
+    transform: translate(0, -5px);
+}
+
+.button_outlined {
+    color: var(--wisteria);
+    background-color: transparent;
+    border: 3px solid var(--grape);
+}
+
+.button_outlined:hover {
+    border-color: var(--wisteria) !important;
+}
+
+/* JavaScript Controlled Classes */
+
+.shadow {
+    box-shadow: 0 8px 28px 16px rgba(0, 0, 0, .05);
+}
+
+
+/* MAIN THINGS! */
+
+
+/* HEADER - SECTION */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 100px;
+    background-color: var(--eerie-black);
+    transition: .3s all ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90% !important;
+    height: 100%;
+    gap: 20px;
+    text-transform: uppercase;
+}
+
+
+.logo_container {
+    display: flex;
+    align-items: center;
+    column-gap: .25ch;
+    font-weight: var(--bold);
+}
+
+.logo {
+    display: grid;
+    justify-content: right;
+    align-items: center;
+    background-color: var(--wisteria);
+    color: var(--eerie-black);
+    padding-inline: 8px;
+    border-radius: 50px;
+    width: 75px;
+    height: 26px;
+}
+
+.logo_text {
+    color: var(--pure-white);
+}
+
+.menu_btn,
+.close_btn {
+    display: none;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+}
+
+.close_btn {
+    position: fixed;
+    top: 4px;
+    right: 4px;
+}
+
+.menu_btn svg,
+.close_btn svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--pure-white);
+}
+
+.close_btn svg {
+    fill: var(--pure-white);
+}
+
+.nav_links {
+    width: 100%;
+}
+
+.nav_links a {
+    font-weight: lighter;
+    letter-spacing: .07em;
+}
+
+nav li:last-child {
+    display: grid;
+    justify-items: end;
+    width: 100%;
+}
+
+nav .title {
+    display: none;
+    color: var(--pure-white);
+}
