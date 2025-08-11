@@ -7,6 +7,35 @@ const shadowHeader = () =>{
 }
 window.addEventListener('scroll', shadowHeader);
 
+
+/* TOGGLE NAVIGATION MENU */
+
+const menuBtn = document.querySelector('.menu_btn');
+const closeBtn = document.querySelector('.close_btn');
+const navList = document.querySelector('.nav_links');
+const links = navList.querySelectorAll('li');
+
+function toggleNav() {
+    navList.classList.toggle('top');
+    closeBtn.classList.toggle('display');
+}
+
+menuBtn.addEventListener('click', () => {
+    toggleNav();
+});
+
+closeBtn.addEventListener('click', () => {
+    toggleNav();
+});
+
+links.forEach((link) => {
+    link.addEventListener('click', toggleNav);
+});
+
+
+
+
+
 /*=============== SCROLL REVEAL ANIMATION - SAMPLE===============*/
 
 /*
