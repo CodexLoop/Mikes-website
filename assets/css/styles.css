@@ -286,12 +286,16 @@ nav {
     display: grid;
     justify-content: right;
     align-items: center;
-    background-color: var(--wisteria);
+    background-color: var(--pure-black);
     color: var(--eerie-black);
     padding-inline: 8px;
     border-radius: 50px;
-    width: 75px;
-    height: 26px;
+    width: 140px;
+    height: 64px;
+}
+
+.logo img {
+    height: 64px;
 }
 
 .logo_text {
@@ -382,6 +386,8 @@ svg {
 .row:first-child {
     display: flex;
     gap: 120px;
+    width: 90%;
+    margin-inline: auto;
 }
 
 .row:first-child p {
@@ -517,10 +523,10 @@ h1 {
 }
 
 .image_container .widget:last-child {
-    right: -11px;
+    right: -18px;
     left: initial;
     top: initial;
-    bottom: -11px;
+    bottom: -18px;
 }
 
 .about_description {
@@ -581,13 +587,13 @@ h1 {
 .card_row:last-child .widget {
     transform: rotateY(180deg);
     left: initial;
-    right: -12px;
+    right: -18px;
 }
 
 .card_row:last-child .widget:last-child{
     transform: rotateX(180deg);
     right: initial;
-    left: -12px;
+    left: -18px;
 }
 /* END OF ABOUT - SECTION */
 
@@ -613,7 +619,7 @@ h1 {
 .testimonials_section .image {
     position: absolute;
     border-radius: 50%;
-    border: 8px solid var(--wisteria);
+    border: 8px solid var(--pure-white);
     overflow: hidden;
 }
 
@@ -728,7 +734,7 @@ h1 {
     bottom: 0;
     margin-block: auto;
     transform: translateY(40px);
-    color: var(--grape);
+    color: var(--pure-white);
 }
 
 .testimonial_text p:first-child {
@@ -904,6 +910,10 @@ h1 {
     font-size: var(--h2-text);
 }
 
+.text .center_image {
+    display: none;
+}
+
 .booking_section .image img {
     width: 100%;
     height: auto;
@@ -975,7 +985,7 @@ h1 {
 .footer svg {
     width: 16px;
     filter: none;
-    fill: var(--sunset);
+    fill: var(--pure-white);
 }
 /* END OF FOOTER - SECTION */
 
@@ -985,7 +995,7 @@ h1 {
 
 /* MOBILE DEVICES */
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
     /* Utilities Classes - Start */
     .section {padding-block: 80px 16px !important;}
     .container {width: 90%;}
@@ -1048,48 +1058,24 @@ h1 {
         height: 255px;
         order: 1;
     }
+    .row:last-child img {
+        height: auto;
+    }
     .row:last-child .cta {
         width: max-content;
         transform: translateX(60px);
+        justify-content: flex-start;
+        padding-block: 32px;
     }
     /* Hero - End */
 
+
     /* About - Start */
-    .card_row { 
-        flex-wrap: wrap;
-        width: 100%;
-    }
-    .card_row:last-child {
-        justify-content: flex-end;
-        gap: 35px;
-        transform: translate(0, -50px);
-    }
-    .image_container,
     .card_row:last-child .image_container {
-        width: 150px;
-        height: 170px;
-        transform: translate(30px, 0);
+        transform: translateX(-30px) !important;
     }
-    .card_row:last-child .image_container {
-        transform: translateX(-30px);
-        justify-self: flex-end;
-        width: 250px;
-        height: 250px;
-    }
-    .about_description {
-        width: 90dvw;
-        padding: 75px 20px 20px;
-        transform: translate(0, -50px);
-    }
-    .about_section .widget:first-child {display: none;}
-    .about_section .scroll_widget {display: none;}
     .about_description_2 {
-        order: 1;
-        transform: none;
-    }
-    .about_description_2 li {
-        place-items: center;
-        margin-inline: 0;
+        order: 1 !important;
     }
     /* About - End */
 
@@ -1195,25 +1181,14 @@ h1 {
 
     /* Booking - Start */
     .booking_section .text_wrapper {
-        position: relative;
         grid-template-columns: 1fr;
-        overflow: hidden;
-        justify-items: center;
+        margin-bottom: 150px;
     }
-    .booking_section .image {
-        position: absolute;
-        display: flex;
-        min-width: 380px;
-        width: 100%;
-        transform: translateY(-80px);
-        left: 0;
-        right: 0;
-        margin-inline: auto;
+    .booking_section .image {display: none;}
+    .text .center_image {
+        display: initial;
+        margin-block: 16px 32px;
     }
-    .booking_section .image:last-child {justify-content: flex-end !important;}
-    .booking_section img {width: 180px !important;}
-    .booking_section h2 {margin-bottom: 9em;}
-    .booking_section .button_light {margin-block: 1.5rem 150px;}
     /* Booking - End */
 
 
@@ -1229,19 +1204,34 @@ h1 {
     /* Footer - End */
 }
 
+
 /* TABLET DEVICES */
 
 @media only screen and (max-width: 1024px) {
     /* Utilities Classes - Start */
     .section {padding-block: 100px 16px;}
+    .widget {
+        width: 50px;
+        height: 75px;
+        border-width: 7px;
+        left: -11px;
+        top: -11px;
+    }  
+    .section_title {margin-bottom: 16px;}
     /* Utilities Classes - End */
+
 
     /* Header - Start */
     header {height: 80px;}
-    /* Header - End */
 
+    .logo {
+        height: 32px;
+        width: 64px;
+    }
+    .logo img {
+        height: 24px;
+    }
 
-    /* Navigation - Start */
     nav .links {
         position: absolute;
         flex-direction: column;
@@ -1280,5 +1270,60 @@ h1 {
         transform: rotateZ(180deg);
     }
     nav li:last-child {width: initial;}
-    /* Navigation - End */
+    /* Header - End */
+
+
+    /* About - Start */
+    .card_row { 
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+    .card_row:last-child {
+        justify-content: flex-end;
+        gap: 35px;
+        transform: translate(0, -50px);
+    }
+    .image_container,
+    .card_row:last-child .image_container {
+        width: 150px;
+        height: 170px;
+        transform: translate(30px, 0);
+    }
+    .card_row:last-child .image_container {
+        align-self: flex-end;
+        width: 250px;
+        height: 250px;
+        transform: none;
+        flex-shrink: 0;
+    }
+    .about_description {
+        width: 90dvw;
+        max-width: 500px;
+        padding: 75px 20px 20px;
+        transform: translate(0, -50px);
+    }
+    .about_section .widget:first-child {display: none;}
+    .about_section .scroll_widget {display: none;}
+    .about_description_2 {
+        transform: none;
+        order: initial;
+        width: auto;
+        flex-shrink: 1;
+        margin-top: 32px;
+    }
+    .about_description_2 li {
+        place-items: center;
+        margin-inline: 0;
+    }
+    /* About - End */
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Hero - Start */
+    .hero_images {display: none;}
+    .row:last-child .image {
+        margin-right: 32px;
+    }
+    /* Hero - End */
 }
