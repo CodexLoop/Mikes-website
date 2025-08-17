@@ -141,7 +141,7 @@ svg {
 
 .panel {
     background-color: var(--eerie-black);
-    padding: 1px 10px;
+    padding: 1px 0px;
     width: max-content;
     border-radius: 4px;
 }
@@ -356,7 +356,7 @@ nav .title {
     position: relative;
     background-color: var(--dark-red);
     color: var(--pure-white);
-    height: 800px;
+    height: 750px;
     z-index: 0;
 }
 
@@ -423,7 +423,7 @@ svg {
     display: flex;
     height: max-content;
     align-items: center;
-    transform: translate(calc(52px + 120px), -170px);
+    transform: translate(calc(52px + 120px), -100px);
 }
 
 h1 {
@@ -469,6 +469,7 @@ h1 {
 
 .row:last-child {
     display: flex;
+    margin-top: 32px;
 }
 
 .row:last-child .image {
@@ -476,6 +477,7 @@ h1 {
     height: 330px;
     margin-inline: calc(52px + 120px);
     border: 8px solid var(--wisteria);
+    overflow: hidden;
 }
 
 .row:last-child .cta {
@@ -819,7 +821,7 @@ h1 {
 .service_cards .card:nth-child(4) {
     background-color: var(--pure-white);
     border-radius: 7px;
-    padding: 15px 15px 15px 25px;
+    padding: 15px 15px 15px 40px;
     height: 300px;
 }
 
@@ -829,7 +831,7 @@ h1 {
 }
 
 .details {
-    padding: 15px 15px 15px 25px;
+    padding: 15px 15px 15px 40px;
     background-color: var(--pure-white);
     border-radius: 7px;  
     height: 300px;
@@ -846,7 +848,8 @@ h1 {
 
 .service_cards li {
     position: relative;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    line-height: 1em;
 }
 
 .service_cards li:before {
@@ -854,9 +857,9 @@ h1 {
     position: absolute;
     width: 5px;
     height: 5px;
-    left: -10px;
-    top: 0;
-    bottom: 0;
+    left: -20px;
+    top: 10%;
+    /* bottom: 0; */
     margin-block: auto;
     background-color: var(--eerie-black);
 }
@@ -1062,7 +1065,7 @@ h1 {
     /* Hero - End */
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 1220px) {
     /* Utility Classes - Start */
     .section {padding-block: 80px 16px;}
     .container {
@@ -1097,8 +1100,7 @@ h1 {
 
 
     /* Hero - Start */
-    .hero_section {
-        height: 400px;}
+    .hero_section {height: 500px;}
     .hero_container {
         grid-template-rows: repeat(3, max-content);    
         gap: 20px;
@@ -1162,13 +1164,12 @@ h1 {
     .card_row:last-child .image_container {
         width: 150px;
         height: 170px;
-        transform: translate(-30px, 0);
+        transform: none;
     }
     .card_row:last-child .image_container {
         align-self: flex-end;
         width: 250px;
         height: 250px;
-        transform: none;
         flex-shrink: 0;
     }
     .about_description {
